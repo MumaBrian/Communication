@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { UsersModule } from './users/users.module';
       synchronize: false,     // Set to false in production (use migrations instead)
     }),
     UsersModule,
+    DatabaseModule,
   ],
 })
 export class AppModule {}
